@@ -109,7 +109,7 @@ def alpha_system_to_solve(mu_and_l, eqies_model, ineqies_model, msrd_data, vars_
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-def gram_ch_data_reconcil(eqies_model, ineqies_model, msrd_data, error_params, alpha_params, params_):
+def DRsemiparamEqIneq(eqies_model, ineqies_model, msrd_data, error_params, alpha_params, params_):
     """
     Reconciles measured data using the Alpha Gram-Charlier method.
 
