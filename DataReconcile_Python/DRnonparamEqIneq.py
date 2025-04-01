@@ -84,7 +84,7 @@ def kernels_system_to_solve(mu_and_l, eqies_model, ineqies_model, msrd_data, mod
 # -----------------------------------------------------------------------------
 # -----------------------------------------------------------------------------
 
-def kernel_data_reconcil(eqies_model, ineqies_model, msrd_data, model_params, prior_vars, bandwidths):
+def DRnonparamEqIneq(eqies_model, ineqies_model, msrd_data, model_params, prior_vars, bandwidths):
     """
     Reconciles measured data using kernel-based estimation.
 
