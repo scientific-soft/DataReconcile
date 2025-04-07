@@ -2,14 +2,29 @@
 библиотеки DataReconcile.
 
 0. Если это не было сделано ранее, установите компилятор версией не старше C++11.
+(инструкцию по пошаговой установке можно найти в директории DataReconcile_Сpp, в файле README)
 
 1. Клонируйте репозиторий (команды bash консоли):
 git clone https://github.com/scientific-soft/DataReconcile.git
 cd DataReconcile
 
-2. Установите зависимости - библиотеку Eigen (команды bash консоли, пример для 86-64 версии Win):
+2. Установите зависимости - библиотеку Eigen одним из следующих способов (в зависимости 
+от используемой операционной системы):
+
+2.А Windows (MinGW)
+(команды bash консоли)
 pacman -Syu --noconfirm
 pacman -S --noconfirm mingw-w64-x86_64-gcc mingw-w64-x86_64-cmake mingw-w64-x86_64-eigen3 git
+
+2.Б Linux (Debian/Ubuntu)
+(команды bash консоли)
+sudo apt update
+sudo apt install -y g++ cmake libeigen3-dev git
+
+2.С MacOS (Homebrew)
+(команды bash консоли)
+brew update
+brew install gcc cmake eigen git
 
 3. Скомпилируйте интересующий вас пример. Это можно сделать несколькими способами:
 
