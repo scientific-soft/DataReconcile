@@ -3,6 +3,64 @@
 
 1. Если ранее этого не было сделано, Скачайте и установите интерпретатор Python версии 3.0 или новее.
 
+1.А Установка Python на Windows с помощью официального установщика
+o	Перейдите по ссылке https://www.python.org/downloads/.
+o	Нажмите «Загрузить Python 3.x.x» (последняя стабильная версия).
+o	Запустите установщик
+o	Дважды щелкните загруженный .exe-файл.
+o	Отметьте оба параметра:
+«Добавить Python 3.x в PATH» (важно!)
+«Установить средство запуска для всех пользователей» (необязательно)
+o	Нажмите «Установить сейчас».
+o	Проверка установки
+Откройте командную строку (Win + R → cmd).
+Введите (sh):
+python --version
+Ожидаемый вывод:
+Python 3.x.x
+
+1.Б Установка Python на Linux
+o	Debian/Ubuntu (APT)
+Обновить пакеты (sh):
+sudo apt update
+Установить Python (sh):
+sudo apt install python3 python3-pip
+Проверить (sh):
+python3 --version
+o	Fedora (DNF)
+Установить Python (sh):
+sudo dnf install python3 python3-pip
+Проверить (sh):
+python3 --version
+o	Arch Linux (Pacman)
+Установить Python (sh):
+sudo pacman -S python python-pip
+Проверить успешность установки (sh):
+python --version
+
+1.В Установка Python на macOS
+Метод 1: использование официального установщика
+Загрузить Python
+Посетите https://www.python.org/downloads/macos/.
+Загрузите установщик macOS 64-bit (.pkg).
+Запустите установщик
+Откройте файл .pkg и следуйте указаниям мастера установки.
+Убедитесь, что установлен флажок «Установить сертификаты».
+Проверка установки
+Откройте терминал (⌘ + Пробел → Терминал).
+Введите (sh):
+python3 --version
+Ожидаемый вывод:
+Python 3.x.x
+
+Метод 2: использование Homebrew (для продвинутых пользователей)
+Установите Homebrew (если не установлен) (sh):
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+Установите Python (sh):
+brew install python
+Проверка (sh):
+python3 --version
+
 2. Скачайте (А) файлы библиотеки DataReconcile, либо клонируйте (Б) на вычислительную машину, где планируется сборка проекта, использующего функционал библиотеки.
 2.А Как скачать содержимое репозитория DataReconcile:
 o	Перейдите на главную страницу репозитория по ссылке https://github.com/scientific-soft/DataReconcile
