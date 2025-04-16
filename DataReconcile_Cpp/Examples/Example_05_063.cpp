@@ -179,10 +179,6 @@ VectorXd DRsemiparamEq(const function<VectorXd(const VectorXd&, const VectorXd&)
 
 // Example dependency function
 VectorXd example_depend_func(const VectorXd& mu, const VectorXd& params) {
-    //VectorXd result(mu.size());
-    //for (int i = 0; i < mu.size(); ++i) {
-    //    result[i] = params[0] * mu[i] + params[1];
-    //}
     VectorXd result(2);
     result[0] = mu[0] - mu[1] * params[0];
     result[1] = mu[0] - mu[1] * params[0];
