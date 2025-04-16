@@ -184,8 +184,8 @@ VectorXd example_depend_func(const VectorXd& mu, const VectorXd& params) {
     //    result[i] = params[0] * mu[i] + params[1];
     //}
     VectorXd result(2);
-        result[0] = mu[0] - mu[1] * params[0];
-        result[1] = mu[0] - mu[1] * params[0];
+    result[0] = mu[0] - mu[1] * params[0];
+    result[1] = mu[0] - mu[1] * params[0];
     return result;
 }
 
@@ -193,10 +193,10 @@ int main() {
     try {
         // Example usage
         int measured_var_n = 2;
-        int n_of_measurements = 3;
+        int n_of_measurements = 2;
         MatrixXd msrd_data(measured_var_n, n_of_measurements);  // Example (measured_var_n x n_of_measurements) matrix
-        msrd_data << 0.9, 1.1,
-                     1.8, 2.2;
+        msrd_data << 1.8, 2.2,
+            0.9, 1.1;
 
         vector<double> error_params = { 0.1, 0.1 }; // Example error parameters
         vector<double> params = { 2.0 }; // Example model parameters
