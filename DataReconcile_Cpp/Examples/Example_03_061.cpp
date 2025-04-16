@@ -34,17 +34,17 @@ VectorXd alpha_system_to_solve(const VectorXd& mu_and_l,
             throw invalid_argument("None of the error parameters should be 0.");
         }
         else {
-         //  // Imaginary perturbation for numerical derivative
-         //   VectorXcd imagx = VectorXcd::Zero(xNum);
-         //   imagx(j) = complex<double>(0.0, mu_and_l(j) * pow(10.0, -100) + pow(10.0, -101));
+            //  // Imaginary perturbation for numerical derivative
+            //   VectorXcd imagx = VectorXcd::Zero(xNum);
+            //   imagx(j) = complex<double>(0.0, mu_and_l(j) * pow(10.0, -100) + pow(10.0, -101));
 
-         //   // Create perturbed input for numerical derivative
-         //   VectorXd mu_and_l_perturbed = mu_and_l;
-         //   mu_and_l_perturbed += imagx.real();
+            //   // Create perturbed input for numerical derivative
+            //   VectorXd mu_and_l_perturbed = mu_and_l;
+            //   mu_and_l_perturbed += imagx.real();
 
 
-            // ---------------
-            // Numerical derivative using small imaginary perturbation
+               // ---------------
+               // Numerical derivative using small imaginary perturbation
             VectorXcd imagx = VectorXcd::Zero(xNum);
             imagx[j] = std::complex<double>(0.0, mu_and_l[j] * pow(10.0, -100) + pow(10.0, -101));
 
@@ -179,10 +179,13 @@ int main() {
         int n_of_measurements = 3;
         MatrixXd msrd_data(measured_var_n, n_of_measurements);  // Example (measured_var_n x n_of_measurements) matrix
         msrd_data << 9.0, 10.0, 11.0,
-                    11.0, 10.0, 9.0;
+            11.0, 10.0, 9.0;
 
-        vector<double> error_params = { 0.1, 0.1 }; // Example error parameters
-        vector<double> params = { 2.0 }; // Example model parameters
+        VectorXd error_params(2); // length is (measured_var_n)
+        error_params << 0.1, 0.1;
+        VectorXd params(1);
+        params << 2.0;
+
 
         // Example alpha parameters (As, Ex) or (As1, Ex1, ..., AsN, ExN)
         MatrixXd alpha_params(2, measured_var_n);
